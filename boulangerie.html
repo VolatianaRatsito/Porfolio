@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projet Boulangerie - Gestion intelligente</title>
+  <link rel="stylesheet" href="asset/css/boulangerie.css">
+</head>
+
+<body>
+  <header>
+    <h1>🍞 Projet Boulangerie Intelligente</h1>
+  </header>
+
+  <div class="main-container">
+    <!-- Section 1: Présentation du projet -->
+    <section class="section" id="presentation">
+      <h2>📋 Présentation du Projet</h2>
+      <p>
+        Ce projet vise à moderniser la gestion d'une boulangerie grâce à une application web Java
+        permettant le suivi des ingrédients, la planification de la production et l'optimisation
+        des recettes selon les besoins du marché et les ressources disponibles.
+      </p>
+      <p>
+        Développé avec NetBeans, cette application web Java offre un écosystème numérique qui soutient 
+        l'artisan boulanger dans ses décisions quotidiennes, en lui fournissant des données précises 
+        et des recommandations pertinentes pour améliorer l'efficacité et la rentabilité de son entreprise.
+      </p>
+      
+      <h3>🧩 Fonctionnalités principales</h3>
+      <ul>
+        <li>Gestion intelligente des stocks et alertes de péremption</li>
+        <li>Calcul automatique des coûts de production et marges bénéficiaires</li>
+        <li>Optimisation des recettes selon disponibilité des ingrédients</li>
+        <li>Planification de production basée sur la demande</li>
+        <li>Interface web intuitive pour un suivi en temps réel</li>
+      </ul>
+    </section>
+
+    <!-- Section 3: Méthodes / Technologies -->
+    <section class="section" id="methodes">
+      <h2>⚙️ Méthodes et Technologies</h2>
+      <p>
+        Notre approche combine des méthodes de gestion éprouvées avec les technologies Java
+        pour créer une application web complète et adaptée aux besoins spécifiques des boulangeries artisanales.
+      </p>
+      
+      <h3>💻 Environnement de Développement</h3>
+      <ul>
+        <li>NetBeans comme IDE principal pour le développement</li>
+        <li>Java Web Application comme architecture de base</li>
+        <li>Servlets et JSP pour la logique métier et l'interface utilisateur</li>
+        <li>Déploiement sur serveur d'applications Java (Tomcat)</li>
+      </ul>
+      
+      <h3>📱 Interface Utilisateur Web</h3>
+      <ul>
+        <li>Design responsive adapté aux tablettes et smartphones</li>
+        <li>Pages JSP dynamiques avec données en temps réel</li>
+        <li>Notifications pour les alertes importantes</li>
+        <li>Expérience utilisateur optimisée pour un usage quotidien</li>
+      </ul>
+      
+    <!-- Section 4: Architecture et Technologies -->
+    <section class="section" id="architecture">
+      <h2>🏗️ Architecture et Technologies</h2>
+      <p>
+        Le système est construit avec une architecture Java Web Application utilisant NetBeans comme environnement de développement
+        et PostgreSQL pour la gestion des données, garantissant performance et fiabilité.
+      </p>
+      
+      <div class="architecture-diagram">
+        <div class="architecture-item">
+          <div class="architecture-icon">☕</div>
+          <div class="architecture-text">
+            <h4>Application Web Java</h4>
+            <p>Développement avec NetBeans IDE, utilisant Servlets, JSP et Java EE pour une architecture web robuste et modulaire.</p>
+          </div>
+        </div>
+        
+        <div class="architecture-item">
+          <div class="architecture-icon">🐘</div>
+          <div class="architecture-text">
+            <h4>Base de données PostgreSQL</h4>
+            <p>Stockage robuste des données avec relations complexes entre ingrédients, recettes et productions. Requêtes optimisées pour les opérations quotidiennes.</p>
+          </div>
+        </div>
+        
+        <div class="architecture-item">
+          <div class="architecture-icon">🌐</div>
+          <div class="architecture-text">
+            <h4>Interface Web</h4>
+            <p>Pages JSP dynamiques avec HTML, CSS et JavaScript, offrant une expérience responsive sur tous les appareils.</p>
+          </div>
+        </div>
+      </div>
+      
+      <h3>🔧 Stack Technologique</h3>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <div class="tech-icon">🖥️</div>
+          <h4>Environnement</h4>
+          <p>NetBeans IDE</p>
+        </div>
+        
+        <div class="tech-card">
+          <div class="tech-icon">☕</div>
+          <h4>Backend</h4>
+          <p>Java Web Application</p>
+        </div>
+        
+        <div class="tech-card">
+          <div class="tech-icon">🐘</div>
+          <h4>Base de données</h4>
+          <p>PostgreSQL</p>
+        </div>
+        
+        <div class="tech-card">
+          <div class="tech-icon">🌐</div>
+          <h4>Technologies Web</h4>
+          <p>Servlets, JSP, HTML, CSS</p>
+        </div>
+        
+        <div class="tech-card">
+          <div class="tech-icon">🚀</div>
+          <h4>Serveur</h4>
+          <p>Apache Tomcat</p>
+        </div>
+        
+        <div class="tech-card">
+          <div class="tech-icon">🗃️</div>
+          <h4>Accès aux données</h4>
+          <p>JDBC</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://github.com/VolatianaRatsito" title="GitHub">📂</a>
+      <a href="https://www.linkedin.com/in/volatianaRatsitoarimalala" title="LinkedIn">💼</a>
+    </div>
+    <p>© 2025 <span>Projet Boulangerie Intelligente</span> | Développé par <span>Volatiana Anna</span></p>
+  </footer>
+
+  <script>
+    // Navigation active state
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('.nav-links a');
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Dolibarr GPAO – ExistingApp & NewApp</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="asset/css/erpnext.css">
+</head>
+<body>
+  <header>
+    Dolibarr GPAO – ExistingApp & NewApp
+  </header>
+
+  <main>
+
+    <!-- EXISTINGAPP -->
+    <section>
+      <h2>1. ExistingApp – Module Dolibarr</h2>
+      <p>ExistingApp est le Dolibarr standard pour la gestion de la GPAO. Il inclut :</p>
+      <ul>
+        <li><strong>Produit :</strong> Gestion des articles fabriqués.</li>
+        <li><strong>Entrepôt :</strong> Localisation et suivi des stocks.</li>
+        <li><strong>Stock :</strong> Contrôle des quantités disponibles.</li>
+        <li><strong>Correction de stock :</strong> Ajouter directement du stock sans passer par l’achat fournisseur.</li>
+        <li><strong>Fabrication :</strong> Transformer les matières premières en produits finis.</li>
+        <li><strong>Ordre de fabrication :</strong> Suivi complet (brouillon → validé → fabriqué).</li>
+      </ul>
+      <div class="architecture">
+        <img src="asset/images/crm/Architecture du Module GPAO.png" alt="Architecture ExistingApp">
+      </div>
+      <div class="note">Ici vous pouvez placer un schéma illustrant le flux de gestion de stock et fabrication dans ExistingApp.</div>
+    </section>
+
+    <!-- NEWAPP -->
+    <section>
+      <h2>2. NewApp – Extension interactive</h2>
+      <p>NewApp est l’application complémentaire qui permet de gérer la GPAO de façon moderne et centralisée. Fonctionnalités :</p>
+      <ul>
+        <li>Importer fichiers produits et stocks depuis le modèle Google Sheets.</li>
+        <li>Créer un ordre de fabrication (brouillon) avec choix de BOM et quantité.</li>
+        <li>Liste des ordres de fabrication avec état : brouillon → validé → fabriqué.</li>
+        <li>Visualiser stocks : nom produit, stock initial, mouvements, stock final.</li>
+      </ul>
+      <ul>
+        <li>Fabriquer plusieurs produits en même temps.</li>
+        <li>Ajouter plusieurs BOM et quantités à la liste de production.</li>
+        <li>Bouton « Fabriquer le tout » passe directement les produits à l’état « fabriqué ».</li>
+      </ul>
+      <ul>
+        <li>Ajouter/supprimer du stock avec prix d’achat.</li>
+        <li>Voir mouvements de stock détaillés.</li>
+        <li>Statistiques avec filtre par date (Nb fabriqué / Nb utilisé).</li>
+      </ul>
+
+      <div class="architecture">
+        <img src="asset/images/crm/Architecture de NewApp et Dolibarr.png" alt="Architecture NewApp">
+      </div>
+      <div class="note">Vous pouvez insérer un diagramme illustrant la structure de NewApp et ses interactions avec Dolibarr.</div>
+    </section>
+
+    <!-- DEMO -->
+  <section>
+    <h2>3. Démonstration vidéo</h2>
+    <p>La démonstration vidéo permet de visualiser toutes les fonctionnalités en action.</p>
+    <video width="640" controls>
+      <source src="asset/images/crm/e7de32fb-8314-4734-aa2c-a94ccb6e2d29.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas la vidéo.
+    </video>
+  </section>
+
+  </main>
+
+  <footer>
+    © 2025 – NewApp GPAO pour Dolibarr
+  </footer>
+
+  <script>
+    // Fade-in sections au scroll
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){ entry.target.classList.add('visible'); }
+      });
+    }, { threshold:0.2 });
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+    :root {
+        --primary-color: #0f172a;       /* Fond sombre principal */
+        --secondary-color: #e2e8f0;     /* Texte clair */
+        --bg-color: #030712;            /* Fond général */
+        --accent: #00f5d4;              /* Couleur accent principale */
+        --accent-hover: #06d6a0;        /* Accent au survol */
+        --card-bg: rgba(15,23,42,0.25); /* Fond des cartes semi-transparent */
+        --radius: 20px;                 /* Arrondi général */
+        --transition: 0.35s ease;       /* Transition générale */
+        --shadow: 0 0 25px rgba(0,255,212,0.25); /* Ombre légère */
+        --text: #e2e8f0;                /* Texte principal */
+        --subtext: rgba(226,232,240,0.75); /* Texte secondaire */
+    }
+
+    /* Reset & Base */
+    * {
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: 'Inter', sans-serif;
+    }
+
+    body {
+        background: var(--bg-color);
+        color: var(--text);
+        line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+        background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+        color: var(--primary-color);
+        padding: 30px;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        border-bottom-left-radius: var(--radius);
+        border-bottom-right-radius: var(--radius);
+        box-shadow: var(--shadow);
+    }
+
+    /* Main container */
+    main {
+        width: 90%;
+        max-width: 1200px;
+        margin: 40px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* Sections / Cards */
+    section {
+        background: var(--card-bg);
+        backdrop-filter: blur(10px);
+        border-radius: var(--radius);
+        padding: 30px 35px;
+        box-shadow: var(--shadow);
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.6s ease-out;
+    }
+
+    /* Visible au scroll */
+    section.visible {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    /* Titles */
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        color: var(--accent);
+        border-left: 6px solid var(--accent-hover);
+        padding-left: 12px;
+    }
+
+    h3 {
+        color: var(--accent-hover);
+        margin-bottom: 10px;
+    }
+
+    /* Lists */
+    ul {
+        margin-left: 25px;
+        margin-bottom: 15px;
+    }
+    li {
+        margin-bottom: 10px;
+    }
+
+    /* Note boxes */
+    .note {
+        background: rgba(0,245,212,0.1);
+        padding: 15px 18px;
+        border-left: 6px solid var(--accent);
+        border-radius: var(--radius);
+        margin-bottom: 12px;
+        font-weight: 500;
+        animation: pulse 2.5s infinite;
+    }
+    @keyframes pulse {
+        0%,100% {background: rgba(0,245,212,0.1);}
+        50% {background: rgba(6,214,160,0.15);}
+    }
+
+    /* Architecture images */
+    .architecture {
+        display:flex;
+        justify-content:center;
+        margin:20px 0;
+    }
+    .architecture img {
+        max-width:100%;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        transition: transform var(--transition);
+    }
+    .architecture img:hover {
+        transform: scale(1.03);
+    }
+
+    /* Buttons */
+    .btn {
+        display:inline-block;
+        padding:12px 22px;
+        margin-top:12px;
+        background: var(--accent);
+        color: var(--primary-color);
+        font-weight:600;
+        border-radius: var(--radius);
+        cursor:pointer;
+        transition: all var(--transition);
+        border:none;
+    }
+    .btn:hover {
+        background: var(--accent-hover);
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: var(--shadow);
+    }
+
+    /* Video styling */
+    video {
+        width: 100%;
+        max-width: 720px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        margin-top: 15px;
+    }
+
+    /* Footer */
+    footer {
+        text-align:center;
+        padding:25px;
+        font-size:0.9rem;
+        color: var(--subtext);
+        border-top:1px solid rgba(255,255,255,0.1);
+        margin-top:50px;
+    }
+
+    /* Responsive */
+    @media (max-width:768px) {
+        main { width:95%; }
+        h2 { font-size:1.5rem; }
+        h3 { font-size:1.2rem; }
+    }

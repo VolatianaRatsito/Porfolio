@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio - Framework Java Servlet</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="asset/css/index.css">
+</head>
+<body>
+<div class="container">
+    <a href="test.html" class="back-button"><i class="fas fa-arrow-left"></i> Retour au portfolio</a>
+
+    <h1>Framework Java Servlet</h1>
+    <p style="text-align:center; max-width:800px; margin:0 auto 2rem;">
+        Framework MVC maison en Java avec annotations pour simplifier le développement web.
+    </p>
+
+    <h2>Architecture du Framework</h2>
+    <p>Notre framework suit une architecture MVC avec un FrontController central.</p>
+    <div class="architecture-diagram">
+        <img src="asset/images/Ticketing/Diagramme.png" alt="Diagramme d'architecture MVC">
+        <p class="caption">Diagramme illustrant l'architecture MVC du framework</p>
+    </div>
+
+    <!-- Exemple de code -->
+    <div class="annotation-example">
+        <pre><code>package controller;
+
+        import controller.principal.*; 
+        import annotation.*;
+        import tool.*;
+
+        import java.sql.Connection;
+        import java.sql.SQLException;
+        import models.*;
+        import connex.*;
+
+        @Controller
+        public class LoginController {
+
+            @Url(value="/app/login")
+            @Get()
+            public ModelAndView showFormulaire() {
+                ModelAndView mav = new ModelAndView("/views/login");
+                return mav;
+            }
+
+            @Url(value="/app/SubmitForm")
+            @Post()
+            public ModelAndView validateForm(@RequestParameter("email") String mailString,
+                                            @RequestParameter("password") String mdpString,
+                                            @ModelAttribute MySession mysession) throws ClassNotFoundException, SQLException {
+                Connection c = Connexion.getConnection();
+            
+                Passager admin = new Passager(mailString, mdpString);
+                boolean isLogged = admin.login(c);
+
+                if (isLogged) {
+                    mysession.add("userSessionKey",true);
+                    mysession.add("userRole","admin");
+                    return new ModelAndView("/views/accueil");
+                } else {
+                    return new ModelAndView("/views/login");
+                }
+            }    
+
+        } 
+        </code></pre>
+    </div>
+
+    <h2>Fonctionnalités du Framework</h2>
+    <div class="framework-features">
+        <div class="feature-card"><h3>Système d'Annotations</h3><p>Mapper les URLs, injecter les paramètres et gérer l'authentification facilement.</p></div>
+        <div class="feature-card"><h3>Gestion des Sessions</h3><p>Système personnalisé MySession pour authentification et rôles.</p></div>
+        <div class="feature-card"><h3>Validation des Données</h3><p>Support des annotations de validation et MultiPart pour formulaires complexes.</p></div>
+        <div class="feature-card"><h3>Sécurité Intégrée</h3><p>Contrôle d'accès basé sur les rôles, protection CSRF et gestion centralisée des exceptions.</p></div>
+        <div class="feature-card"><h3>API REST</h3><p>Support natif pour la création d'APIs RESTful avec sérialisation JSON automatique.</p></div>
+        <div class="feature-card"><h3>Gestion des Erreurs</h3><p>Système d'exceptions personnalisées et pages d'erreur configurables.</p></div>
+    </div>
+
+    <h2>Fonctionnalités Avancées du Système Ticketing</h2>
+    <div class="framework-features">
+        <div class="feature-card"><h3>Interface Intuitive et Sécurisée</h3><p>Connexion sécurisée avec email et mot de passe. Le système restreint l’accès aux fonctionnalités selon les rôles utilisateurs.</p></div>
+        <div class="feature-card"><h3>CRUD des Vols</h3><p>Gestion complète : création, lecture, mise à jour et suppression des vols avec toutes leurs informations.</p></div>
+        <div class="feature-card"><h3>Recherche Multi-Critères</h3><p>Recherche flexible selon départ, arrivée, date et type de siège (Business ou Économique).</p></div>
+        <div class="feature-card"><h3>Limitation et Gestion des Réservations</h3><p>Annulation automatique des réservations non payées dans les délais. Paramétrage du délai de réservation avant départ.</p></div>
+        <div class="feature-card"><h3>Prix Dynamiques</h3><p>Tarification flexible selon la date de réservation et le type de siège.</p></div>
+        <div class="feature-card"><h3>Gestion des Paiements</h3><p>Page de paiement intégrée, statut de réservation mis à jour automatiquement selon les paiements effectués.</p></div>
+        <div class="feature-card"><h3>Contrôle d'Accès</h3><p>Annotations <code>@Authentified</code> et <code>@Role</code> pour gérer les permissions des utilisateurs.</p></div>
+    </div>
+    <section class="demo-full">
+        <h3>Vidéo Démonstration</h3>
+        <video controls poster="cover-video.png">
+            <source src="asset/images/crm/lv_0_20251003164714.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la lecture vidéo.
+        </video>
+        <p>Présentation vidéo de l’application Ticketing, illustrant les principales fonctionnalités en action.</p>
+    </section>
+</div>
+</body>
+</html>
