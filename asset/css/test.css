@@ -33,23 +33,19 @@ body {
 
 /* ===== Navigation (Glass Effect) ===== */
 .nav-container {
+     background-color: #0f172a;
+    padding: 10px 20px;
     position: fixed;
-    top: 0; left: 0;
     width: 100%;
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    border-bottom: var(--border-glass);
-    z-index: 1000;
-    box-shadow: var(--shadow-strong);
+    top: 0;
+    z-index: 999;
 }
 
 nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -66,11 +62,10 @@ nav {
 }
 
 .nav-links a {
-    color: var(--secondary-color);
-    font-weight: 600;
     text-decoration: none;
-    position: relative;
-    transition: var(--transition);
+    color: #e2e8f0;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .nav-links a::after {
@@ -84,11 +79,61 @@ nav {
 }
 
 .nav-links a:hover {
-    color: var(--accent-color);
+    color: #06d6a0;
 }
 
 .nav-links a:hover::after {
     width: 100%;
+}
+
+/* --- Bouton menu hamburger (mobile) --- */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: #06d6a0;
+    cursor: pointer;
+}
+
+/* --- Logo --- */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    /* Cacher les liens du menu par défaut sur mobile */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #0f172a;
+        width: 100%;
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    /* Afficher le menu quand il est actif */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Afficher le bouton hamburger */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Centrer le logo */
+    .logo span {
+        font-size: 20px;
+    }
+}
+
+/* --- Grand écran --- */
+@media (min-width: 769px) {
+    /* Cacher le hamburger sur PC */
+    .menu-toggle {
+        display: none;
+    }
 }
 
 /* ===== HEADER ===== */
