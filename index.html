@@ -415,7 +415,7 @@
         </div>
     </section>
 
-    <!-- Le reste du code (projets, contact, footer, scripts) reste inchangé -->
+   <!-- Le reste du code (projets, contact, footer, scripts) reste inchangé -->
     <!-- Nouvelle section Projets -->
     <section id="projets">
         <h2>Mon Portfolio</h2>
@@ -474,7 +474,30 @@
                     </div>
                 </div>
             </div>
-            
+
+            <div class="projet-card">
+                <div class="projet-image">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=500&q=80" alt="EduCap's">
+                </div>
+                <div class="projet-content">
+                    <h3>Système scolaire EduCap’s</h3>
+                    <p>Conception et optimisation d’une plateforme de gestion scolaire permettant l’automatisation des bulletins, le suivi des présences et l’intégration d’une communication interne.</p>
+                    
+                    <div class="projet-technologies">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Symfony</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">DomPDF</span>
+                    </div>
+
+                    <div class="projet-links">
+                        <a href="#"><i class="fas fa-lock"></i> Projet Stage</a>
+                        <a href="#" class="outline details-btn" data-project="4">
+                            <i class="fas fa-external-link-alt"></i>Détails
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -601,10 +624,52 @@
         </div>
     </div>
 
+    <div id="modal-project-4" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Système scolaire EduCap’s</h2>
+                <p class="modal-subtitle">Projet de stage – Digitalisation de la gestion scolaire</p>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=500&q=80">
+                </div>
+
+                <div class="modal-details">
+                    <h3>À propos du projet</h3>
+                    <p>Ce projet consiste à concevoir et optimiser un système d'information scolaire permettant de centraliser la gestion académique et administrative.</p>
+
+                    <div class="modal-features">
+                        <h4>Fonctionnalités principales</h4>
+                        <ul>
+                            <li>Génération automatique des bulletins avec rangs et coefficients</li>
+                            <li>Export des bulletins en PDF</li>
+                            <li>Gestion des présences par demi-journée</li>
+                            <li>Messagerie interne avec partage de fichiers</li>
+                        </ul>
+                    </div>
+
+                    <div class="modal-technologies">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Symfony</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">DomPDF</span>
+                    </div>
+
+                    <div class="modal-links">
+                        <a href="educaps.html" class="outline"><i class="fas fa-external-link-alt"></i> Voir la démo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section id="contact">
         <h2>Contactez-moi</h2>
         <div style="text-align: center; margin-top: 2rem;">
-            <p>Disponible pour des opportunités en développement web</p>
+            <p>Disponible pour des opportunités en développement Web</p>
             <p style="margin-top: 1rem;">
                 <a href="mailto:volatiananna@gmail.com" style="color: var(--accent-color); text-decoration: none;">
                     <i class="fas fa-envelope"></i> volatianaannabruno@gmail.com
@@ -623,15 +688,9 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Volatiana Anna Ratsitoarimalala</p>
+        <p>&copy; 2025 Volatiana Anna Ratsitoarimalala. Tous droits réservés.</p>
     </footer>
     <script>
-          const toggle = document.getElementById('menu-toggle');
-          const links = document.getElementById('nav-links');
-
-            toggle.addEventListener('click', () => {
-                links.classList.toggle('active');
-            });
         document.addEventListener('DOMContentLoaded', function () {
             // ===== Animation des barres de compétences =====
             const skillBars = document.querySelectorAll('.skill-bar-fill');
@@ -699,9 +758,11 @@
             // ===== Typed.js pour effet de frappe =====
             new Typed("#typed-name", {
             strings: [
-                    "Volatiana Anna",
+                    "Volatiana Anna Ratsitoarimalala",
+                    "Développeur Web Full Stack",
                     "Développeur Java",
-                    "Développeur C#"
+                     "Développeur C#",
+                    "Passionnée de technologie"
             ],
 
                 typeSpeed: 60,
@@ -730,7 +791,7 @@
                 button.addEventListener('click', function() {
                     const modal = this.closest('.modal');
                     modal.style.display = 'none';
-                    document.body.style.overflow = 'auto'; // Réactiver le défilement
+                    document.body.style.overflow = 'auto'
                 });
             });
 
@@ -739,7 +800,7 @@
                 modals.forEach(modal => {
                     if (event.target === modal) {
                         modal.style.display = 'none';
-                        document.body.style.overflow = 'auto'; // Réactiver le défilement
+                        document.body.style.overflow = 'auto'
                     }
                 });
             });
@@ -750,7 +811,7 @@
                     modals.forEach(modal => {
                         if (modal.style.display === 'block') {
                             modal.style.display = 'none';
-                            document.body.style.overflow = 'auto'; // Réactiver le défilement
+                            document.body.style.overflow = 'auto';
                         }
                     });
                 }  
