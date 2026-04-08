@@ -11,18 +11,28 @@
 </head>
 <body>
     <!-- Navigation -->
-    <div class="nav-container">
+        <div class="nav-container">
         <nav>
-            <a href="#accueil" class="logo">Volatiana</a>
-            <div class="nav-links">
-                <a href="#accueil">Accueil</a>
-                <a href="#competences">A Propos</a>
-                <a href="#technologies">Technologies</a>
-                <a href="#projets">Mon Portfolio</a>
-                <a href="#contact">Contact</a>
+            <a href="#accueil" class="logo">
+            <img src="asset/images/logo.jpg" alt="Logo Volatiana" 
+                style="height: 50px; width: 50px; border-radius: 50%; margin-right: 10px; border: 2px solid #06d6a0;">
+            <span>Volatiana</span>
+            </a>
+
+            <!-- Bouton hamburger -->
+            <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+            </div>
+
+            <div class="nav-links" id="nav-links">
+            <a href="#accueil">Accueil</a>
+            <a href="#competences">A Propos</a>
+            <a href="#technologies">Technologies</a>
+            <a href="#projets">Mon Portfolio</a>
+            <a href="#contact">Contact</a>
             </div>
         </nav>
-    </div>
+        </div>
 
     <!-- Sections -->
     <section id="accueil">
@@ -30,10 +40,14 @@
             <img src="Aho.JPG" alt="Photo de profil de Volatiana">
         </div>
         <div class="header-content">
-            <h1><span id="typed-name"></span></h1>
-            <p class="greeting">Passionnée par la création de solutions innovantes, je souhaite mettre mon énergie et ma curiosité au service du développement informatique. Cela représente pour moi une opportunité d'approfondir mes compétences techniques tout en contribuant à des projets concrets et ambitieux. Rigoureuse et motivée, je m'engage à apporter créativité et sérieux dans chaque mission qui me sera confiée. Rejoindre votre équipe serait pour moi l'occasion 
-                d'apprendre auprès de professionnels expérimentés et de participer activement à vos succès 🌟</p>
-            <a href="e:\Personnelle\RatsitoarimalalaVolatianaAnna.pdf" download class="btn-cv"><i class="fas fa-download"></i> Télécharger mon CV</a>            
+        <h1><span id="typed-name"></span></h1>
+         <p class="greeting">
+            Passionnée par la création de solutions innovantes, je souhaite mettre mon énergie et ma curiosité au service du développement informatique. 
+            En tant que <strong>Développeur Full Stack</strong>, je suis motivée à relever de nouveaux défis et à appliquer mes connaissances dans des environnements réels. 
+            Cela représente pour moi une opportunité d'approfondir mes compétences techniques tout en contribuant à des projets concrets et ambitieux. 
+            Rigoureuse et motivée, je m'engage à apporter créativité et sérieux dans chaque mission qui me sera confiée. 
+            Rejoindre votre équipe serait pour moi l'occasion d'apprendre auprès de professionnels expérimentés et de participer activement à vos succès 🌟
+        </p>
         </div>
     </section>
   
@@ -73,27 +87,27 @@
             <h3><i class="fas fa-code"></i> Software Skills</h3>
             <div class="skills">
                 <div class="skill">
-                    <span>Java <span>100%</span></span>
-                    <div class="skill-bar">
-                        <div class="skill-bar-fill" style="width: 0;" data-percent="100"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <span>Python <span>78%</span></span>
+                    <span>Java <span>78%</span></span>
                     <div class="skill-bar">
                         <div class="skill-bar-fill" style="width: 0;" data-percent="78"></div>
                     </div>
                 </div>
                 <div class="skill">
-                    <span>C# <span>70%</span></span>
+                    <span>Python <span>55%</span></span>
                     <div class="skill-bar">
-                        <div class="skill-bar-fill" style="width: 0;" data-percent="70"></div>
+                        <div class="skill-bar-fill" style="width: 0;" data-percent="55"></div>
                     </div>
                 </div>
                 <div class="skill">
-                    <span>JavaScript <span>80%</span></span>
+                    <span>C# <span>60%</span></span>
                     <div class="skill-bar">
-                        <div class="skill-bar-fill" style="width: 0;" data-percent="80"></div>
+                        <div class="skill-bar-fill" style="width: 0;" data-percent="60"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span>JavaScript <span>65%</span></span>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="width: 0;" data-percent="65"></div>
                     </div>
                 </div>
                 <div class="skill">
@@ -110,9 +124,9 @@
             <h3><i class="fas fa-laptop-code"></i> Development Skills</h3>
             <div class="skills">
                 <div class="skill">
-                    <span>Base de données Relationnelles <span>60%</span></span>
+                    <span>Base de données Relationnelles <span>70%</span></span>
                     <div class="skill-bar">
-                        <div class="skill-bar-fill" style="width: 0;" data-percent="60"></div>
+                        <div class="skill-bar-fill" style="width: 0;" data-percent="70"></div>
                     </div>
                 </div>
                 <div class="skill">
@@ -460,30 +474,7 @@
                     </div>
                 </div>
             </div>
-
-            <div class="projet-card">
-                <div class="projet-image">
-                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=500&q=80" alt="EduCap's">
-                </div>
-                <div class="projet-content">
-                    <h3>Système scolaire EduCap’s</h3>
-                    <p>Conception et optimisation d’une plateforme de gestion scolaire permettant l’automatisation des bulletins, le suivi des présences et l’intégration d’une communication interne.</p>
-                    
-                    <div class="projet-technologies">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Symfony</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">DomPDF</span>
-                    </div>
-
-                    <div class="projet-links">
-                        <a href="#"><i class="fas fa-lock"></i> Projet Stage</a>
-                        <a href="#" class="outline details-btn" data-project="4">
-                            <i class="fas fa-external-link-alt"></i>Détails
-                        </a>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </section>
 
@@ -610,52 +601,10 @@
         </div>
     </div>
 
-    <div id="modal-project-4" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-header">
-                <h2>Système scolaire EduCap’s</h2>
-                <p class="modal-subtitle">Projet de stage – Digitalisation de la gestion scolaire</p>
-            </div>
-
-            <div class="modal-body">
-                <div class="modal-image">
-                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=500&q=80">
-                </div>
-
-                <div class="modal-details">
-                    <h3>À propos du projet</h3>
-                    <p>Ce projet consiste à concevoir et optimiser un système d'information scolaire permettant de centraliser la gestion académique et administrative.</p>
-
-                    <div class="modal-features">
-                        <h4>Fonctionnalités principales</h4>
-                        <ul>
-                            <li>Génération automatique des bulletins avec rangs et coefficients</li>
-                            <li>Export des bulletins en PDF</li>
-                            <li>Gestion des présences par demi-journée</li>
-                            <li>Messagerie interne avec partage de fichiers</li>
-                        </ul>
-                    </div>
-
-                    <div class="modal-technologies">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Symfony</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">DomPDF</span>
-                    </div>
-
-                    <div class="modal-links">
-                        <a href="educaps.html" class="outline"><i class="fas fa-external-link-alt"></i> Voir la démo</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <section id="contact">
         <h2>Contactez-moi</h2>
         <div style="text-align: center; margin-top: 2rem;">
-            <p>Disponible pour des opportunités en développement Web</p>
+            <p>Disponible pour des opportunités en développement web</p>
             <p style="margin-top: 1rem;">
                 <a href="mailto:volatiananna@gmail.com" style="color: var(--accent-color); text-decoration: none;">
                     <i class="fas fa-envelope"></i> volatianaannabruno@gmail.com
@@ -674,9 +623,15 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Volatiana Anna Ratsitoarimalala. Tous droits réservés.</p>
+        <p>&copy; 2025 Volatiana Anna Ratsitoarimalala</p>
     </footer>
     <script>
+          const toggle = document.getElementById('menu-toggle');
+          const links = document.getElementById('nav-links');
+
+            toggle.addEventListener('click', () => {
+                links.classList.toggle('active');
+            });
         document.addEventListener('DOMContentLoaded', function () {
             // ===== Animation des barres de compétences =====
             const skillBars = document.querySelectorAll('.skill-bar-fill');
@@ -744,11 +699,9 @@
             // ===== Typed.js pour effet de frappe =====
             new Typed("#typed-name", {
             strings: [
-                    "Volatiana Anna Ratsitoarimalala",
-                    "Développeur Web Full Stack",
+                    "Volatiana Anna",
                     "Développeur Java",
-                     "Développeur C#",
-                    "Passionnée de technologie"
+                    "Développeur C#"
             ],
 
                 typeSpeed: 60,
@@ -777,7 +730,7 @@
                 button.addEventListener('click', function() {
                     const modal = this.closest('.modal');
                     modal.style.display = 'none';
-                    document.body.style.overflow = 'auto'
+                    document.body.style.overflow = 'auto'; // Réactiver le défilement
                 });
             });
 
@@ -786,7 +739,7 @@
                 modals.forEach(modal => {
                     if (event.target === modal) {
                         modal.style.display = 'none';
-                        document.body.style.overflow = 'auto'
+                        document.body.style.overflow = 'auto'; // Réactiver le défilement
                     }
                 });
             });
@@ -797,7 +750,7 @@
                     modals.forEach(modal => {
                         if (modal.style.display === 'block') {
                             modal.style.display = 'none';
-                            document.body.style.overflow = 'auto';
+                            document.body.style.overflow = 'auto'; // Réactiver le défilement
                         }
                     });
                 }  
