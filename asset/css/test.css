@@ -636,6 +636,41 @@ section.academique {
     background: rgba(0, 245, 212, 0.1);
 }
 
+/* ===== Lien Experience (style spécial) ===== */
+.nav-links a[href="#experience"] {
+    position: relative;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* Effet glow discret */
+.nav-links a[href="#experience"]:hover {
+    color: var(--accent-hover);
+    text-shadow: 0 0 10px rgba(0, 245, 212, 0.6);
+}
+
+/* Soulignement animé amélioré */
+.nav-links a[href="#experience"]::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-hover));
+    transition: width 0.4s ease;
+}
+
+.nav-links a[href="#experience"]:hover::after {
+    width: 100%;
+}
+
+/* Lien actif (quand on scroll) */
+.nav-links a[href="#experience"].active {
+    color: var(--accent-color);
+    text-shadow: 0 0 12px rgba(0,245,212,0.7);
+}
+
 /* ===== MODAL STYLES ===== */
 .modal {
     display: none;
