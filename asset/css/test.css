@@ -636,169 +636,235 @@ section.academique {
     background: rgba(0, 245, 212, 0.1);
 }
 
-/* ===== EXPERIENCE SECTION MODERNISEE ===== */
+/* ===== EXPERIENCE SECTION CENTRALISEE & STYLISEE ===== */
 #experience {
     padding: 5rem 2rem;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
+    position: relative;
 }
 
 .experience-container {
     margin-top: 2rem;
 }
 
-.experience-item {
-    background: var(--glass-bg);
-    border: var(--border-glass);
+/* Timeline container */
+.experience-timeline {
+    position: relative;
+    padding-left: 40px;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, 
+        var(--accent-color) 0%, 
+        rgba(0, 245, 212, 0.5) 50%,
+        transparent 100%);
+    border-radius: 2px;
+}
+
+/* Timeline dot */
+.timeline-dot {
+    position: absolute;
+    left: -10px;
+    top: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0, 245, 212, 0.4);
+    z-index: 2;
+}
+
+.timeline-dot i {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+/* Experience card */
+.experience-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 245, 212, 0.2);
     border-radius: 20px;
-    padding: 2rem;
-    transition: var(--transition);
+    padding: 1.8rem;
+    margin-left: 30px;
+    transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
 }
 
-.experience-item::before {
+.experience-card::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 4px;
-    height: 100%;
-    background: linear-gradient(180deg, var(--accent-color), var(--accent-hover));
-    border-radius: 2px;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-hover), transparent);
 }
 
-.experience-item:hover {
-    transform: translateY(-5px);
+.experience-card:hover {
+    transform: translateX(10px);
     border-color: var(--accent-color);
-    box-shadow: 0 15px 40px rgba(0, 245, 212, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 245, 212, 0.15);
 }
 
-/* En-tête de l'expérience */
-.experience-header {
+/* Card header */
+.card-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     gap: 1rem;
 }
 
-.experience-title {
+.header-left {
     display: flex;
     align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
 }
 
-.experience-title h3 {
-    font-size: 1.5rem;
+.header-left h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
     color: var(--accent-color);
     margin: 0;
-    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
-.experience-badge {
+.status-badge {
+    background: rgba(0, 245, 212, 0.15);
+    border: 1px solid rgba(0, 245, 212, 0.4);
+    padding: 0.25rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.header-right .year {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     background: rgba(0, 245, 212, 0.1);
-    border: 1px solid rgba(0, 245, 212, 0.3);
-    padding: 0.3rem 0.8rem;
+    padding: 0.25rem 0.8rem;
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.header-right .year i {
     color: var(--accent-color);
 }
 
-.experience-badge i {
-    font-size: 0.8rem;
-}
-
-.experience-meta {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.experience-meta span {
+/* Company info */
+.company-info {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    color: var(--secondary-color);
+    gap: 0.6rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    margin-bottom: 1rem;
     font-size: 0.9rem;
 }
 
-.experience-meta i {
+.company-info i {
     color: var(--accent-color);
     font-size: 0.9rem;
 }
 
-/* Projet */
-.experience-project {
-    background: rgba(0, 245, 212, 0.05);
+/* Project name */
+.project-name {
+    background: linear-gradient(90deg, rgba(0, 245, 212, 0.08), transparent);
+    padding: 0.6rem 1rem;
     border-left: 3px solid var(--accent-color);
-    padding: 0.8rem 1rem;
-    margin-bottom: 1.5rem;
-    border-radius: 8px;
+    margin-bottom: 1.2rem;
     display: flex;
-    align-items: center;
-    gap: 0.8rem;
+    align-items: baseline;
     flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
-.experience-project i {
+.project-name i {
     color: var(--accent-color);
-    font-size: 1.2rem;
+    font-size: 0.9rem;
 }
 
-.experience-project strong {
+.project-name strong {
     color: var(--accent-color);
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 1rem;
 }
 
-/* Description */
-.experience-description {
+.project-desc {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Mission statement */
+.mission-statement {
     margin-bottom: 1.5rem;
+    padding: 0.8rem;
+    background: rgba(0, 245, 212, 0.03);
+    border-radius: 12px;
 }
 
-.experience-description p {
+.mission-statement p {
     color: var(--text-light);
     line-height: 1.6;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    margin: 0;
 }
 
-/* Liste des réalisations */
-.achievements-list {
-    margin-bottom: 1.5rem;
-}
-
-.achievements-list h4 {
+/* Section titles */
+.section-title {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    color: var(--accent-color);
-    font-size: 1rem;
+    gap: 0.6rem;
     margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0, 245, 212, 0.2);
+}
+
+.section-title i {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+}
+
+.section-title span {
     font-weight: 600;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.achievements-list h4 i {
-    font-size: 1rem;
-}
-
-.achievements-list ul {
+/* Achievements list */
+.achievements-list {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .achievements-list li {
     display: flex;
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     padding: 0.5rem;
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 10px;
-    transition: var(--transition);
+    border-radius: 12px;
+    transition: all 0.3s ease;
 }
 
 .achievements-list li:hover {
@@ -806,132 +872,193 @@ section.academique {
     transform: translateX(5px);
 }
 
-.achievements-list li i {
-    color: var(--accent-color);
-    font-size: 1.1rem;
-    margin-top: 0.2rem;
+.achievement-icon {
     flex-shrink: 0;
-}
-
-.achievements-list li strong {
-    color: var(--accent-color);
-    font-weight: 600;
-    display: inline-block;
-    margin-right: 0.5rem;
-}
-
-/* Stack technique */
-.tech-stack {
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.tech-label {
-    font-weight: 600;
-    color: var(--secondary-color);
-    font-size: 0.9rem;
-}
-
-.tech-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.tag {
+    width: 35px;
+    height: 35px;
     background: rgba(0, 245, 212, 0.1);
-    color: var(--accent-color);
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    border: 1px solid rgba(0, 245, 212, 0.2);
-    transition: var(--transition);
-}
-
-.tag:hover {
-    background: var(--accent-color);
-    color: var(--primary-color);
-    transform: translateY(-2px);
-}
-
-/* Footer avec métriques d'impact */
-.experience-footer {
-    display: flex;
-    gap: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    flex-wrap: wrap;
-}
-
-.impact-metric {
+    border-radius: 10px;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9rem;
-    color: var(--accent-color);
+    justify-content: center;
 }
 
-.impact-metric i {
+.achievement-icon i {
+    color: var(--accent-color);
     font-size: 1rem;
 }
 
-.impact-metric span {
+.achievement-content {
+    flex: 1;
+}
+
+.achievement-content strong {
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.achievement-content p {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Tech section */
+.tech-section {
+    margin: 1.5rem 0;
+}
+
+.tech-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.pill {
+    background: linear-gradient(135deg, rgba(0, 245, 212, 0.12), rgba(0, 245, 212, 0.05));
+    border: 1px solid rgba(0, 245, 212, 0.25);
+    padding: 0.35rem 1rem;
+    border-radius: 25px;
+    font-size: 0.8rem;
     font-weight: 500;
+    color: var(--accent-color);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.pill:hover {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    border-color: transparent;
+}
+
+/* Impact stats */
+.impact-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    background: rgba(0, 245, 212, 0.05);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.stat:hover {
+    background: rgba(0, 245, 212, 0.1);
+    transform: scale(1.02);
+}
+
+.stat-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 245, 212, 0.15);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-icon i {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-value {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    color: var(--text-light);
+    letter-spacing: 0.5px;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .experience-item {
-        padding: 1.5rem;
+    .experience-timeline {
+        padding-left: 20px;
     }
     
-    .experience-header {
+    .timeline-dot {
+        width: 40px;
+        height: 40px;
+        left: -5px;
+        top: 20px;
+    }
+    
+    .timeline-dot i {
+        font-size: 1rem;
+    }
+    
+    .experience-card {
+        margin-left: 20px;
+        padding: 1.2rem;
+    }
+    
+    .card-header {
         flex-direction: column;
+        align-items: flex-start;
     }
     
-    .experience-title h3 {
-        font-size: 1.3rem;
+    .header-left h3 {
+        font-size: 1.2rem;
     }
     
-    .experience-meta {
-        flex-direction: column;
-        gap: 0.5rem;
+    .impact-stats {
+        grid-template-columns: 1fr;
     }
     
     .achievements-list li {
         flex-direction: column;
-        gap: 0.5rem;
     }
     
-    .experience-footer {
-        flex-direction: column;
-        gap: 0.8rem;
+    .achievement-icon {
+        width: 30px;
+        height: 30px;
     }
     
-    .tech-stack {
+    .project-name {
         flex-direction: column;
         align-items: flex-start;
     }
 }
 
 /* Animation d'entrée */
-@keyframes fadeInUp {
+@keyframes slideInLeft {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateX(-50px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }
 
 .experience-item {
-    animation: fadeInUp 0.6s ease-out;
+    animation: slideInLeft 0.6s ease-out;
 }
 
 /* ===== MODAL STYLES ===== */
