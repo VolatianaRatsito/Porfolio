@@ -636,39 +636,55 @@ section.academique {
     background: rgba(0, 245, 212, 0.1);
 }
 
-/* ===== Lien Experience (style spécial) ===== */
+/* ===== Lien Experience (style premium) ===== */
 .nav-links a[href="#experience"] {
     position: relative;
     color: var(--accent-color);
     font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-/* Effet glow discret */
+/* Hover avec effet fluide */
 .nav-links a[href="#experience"]:hover {
     color: var(--accent-hover);
-    text-shadow: 0 0 10px rgba(0, 245, 212, 0.6);
+    text-shadow: 0 0 8px rgba(0, 245, 212, 0.5);
+    transform: translateY(-1px); /* petit effet levé */
 }
 
-/* Soulignement animé amélioré */
+/* Soulignement animé (plus fluide + centré) */
 .nav-links a[href="#experience"]::after {
     content: '';
     position: absolute;
-    bottom: -4px;
-    left: 0;
+    bottom: -6px;
+    left: 50%;
     width: 0%;
     height: 2px;
     background: linear-gradient(90deg, var(--accent-color), var(--accent-hover));
-    transition: width 0.4s ease;
+    transition: all 0.4s ease;
+    transform: translateX(-50%);
+    border-radius: 2px;
 }
 
+/* Animation hover underline */
 .nav-links a[href="#experience"]:hover::after {
     width: 100%;
 }
 
-/* Lien actif (quand on scroll) */
+/* Lien actif (scroll) */
 .nav-links a[href="#experience"].active {
     color: var(--accent-color);
-    text-shadow: 0 0 12px rgba(0,245,212,0.7);
+    text-shadow: 0 0 10px rgba(0, 245, 212, 0.7);
+}
+
+/* Ligne active persistante */
+.nav-links a[href="#experience"].active::after {
+    width: 100%;
+}
+
+/* Effet focus (accessibilité clavier 👍) */
+.nav-links a[href="#experience"]:focus {
+    outline: none;
+    text-shadow: 0 0 8px rgba(0, 245, 212, 0.6);
 }
 
 /* ===== MODAL STYLES ===== */
