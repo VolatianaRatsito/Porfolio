@@ -636,55 +636,302 @@ section.academique {
     background: rgba(0, 245, 212, 0.1);
 }
 
-/* ===== Lien Experience (style premium) ===== */
-.nav-links a[href="#experience"] {
+/* ===== EXPERIENCE SECTION MODERNISEE ===== */
+#experience {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.experience-container {
+    margin-top: 2rem;
+}
+
+.experience-item {
+    background: var(--glass-bg);
+    border: var(--border-glass);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: var(--transition);
     position: relative;
-    color: var(--accent-color);
-    font-weight: 600;
-    transition: all 0.3s ease;
+    overflow: hidden;
 }
 
-/* Hover avec effet fluide */
-.nav-links a[href="#experience"]:hover {
-    color: var(--accent-hover);
-    text-shadow: 0 0 8px rgba(0, 245, 212, 0.5);
-    transform: translateY(-1px); /* petit effet levé */
-}
-
-/* Soulignement animé (plus fluide + centré) */
-.nav-links a[href="#experience"]::after {
+.experience-item::before {
     content: '';
     position: absolute;
-    bottom: -6px;
-    left: 50%;
-    width: 0%;
-    height: 2px;
-    background: linear-gradient(90deg, var(--accent-color), var(--accent-hover));
-    transition: all 0.4s ease;
-    transform: translateX(-50%);
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--accent-color), var(--accent-hover));
     border-radius: 2px;
 }
 
-/* Animation hover underline */
-.nav-links a[href="#experience"]:hover::after {
-    width: 100%;
+.experience-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 15px 40px rgba(0, 245, 212, 0.15);
 }
 
-/* Lien actif (scroll) */
-.nav-links a[href="#experience"].active {
+/* En-tête de l'expérience */
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.experience-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.experience-title h3 {
+    font-size: 1.5rem;
     color: var(--accent-color);
-    text-shadow: 0 0 10px rgba(0, 245, 212, 0.7);
+    margin: 0;
+    font-weight: 700;
 }
 
-/* Ligne active persistante */
-.nav-links a[href="#experience"].active::after {
-    width: 100%;
+.experience-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0, 245, 212, 0.1);
+    border: 1px solid rgba(0, 245, 212, 0.3);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--accent-color);
 }
 
-/* Effet focus (accessibilité clavier 👍) */
-.nav-links a[href="#experience"]:focus {
-    outline: none;
-    text-shadow: 0 0 8px rgba(0, 245, 212, 0.6);
+.experience-badge i {
+    font-size: 0.8rem;
+}
+
+.experience-meta {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.experience-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.experience-meta i {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+}
+
+/* Projet */
+.experience-project {
+    background: rgba(0, 245, 212, 0.05);
+    border-left: 3px solid var(--accent-color);
+    padding: 0.8rem 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.experience-project i {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+.experience-project strong {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* Description */
+.experience-description {
+    margin-bottom: 1.5rem;
+}
+
+.experience-description p {
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Liste des réalisations */
+.achievements-list {
+    margin-bottom: 1.5rem;
+}
+
+.achievements-list h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent-color);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.achievements-list h4 i {
+    font-size: 1rem;
+}
+
+.achievements-list ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.achievements-list li {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.achievements-list li:hover {
+    background: rgba(0, 245, 212, 0.05);
+    transform: translateX(5px);
+}
+
+.achievements-list li i {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.achievements-list li strong {
+    color: var(--accent-color);
+    font-weight: 600;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+/* Stack technique */
+.tech-stack {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.tech-label {
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background: rgba(0, 245, 212, 0.1);
+    color: var(--accent-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(0, 245, 212, 0.2);
+    transition: var(--transition);
+}
+
+.tag:hover {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Footer avec métriques d'impact */
+.experience-footer {
+    display: flex;
+    gap: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
+}
+
+.impact-metric {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+}
+
+.impact-metric i {
+    font-size: 1rem;
+}
+
+.impact-metric span {
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .experience-item {
+        padding: 1.5rem;
+    }
+    
+    .experience-header {
+        flex-direction: column;
+    }
+    
+    .experience-title h3 {
+        font-size: 1.3rem;
+    }
+    
+    .experience-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .achievements-list li {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .experience-footer {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .tech-stack {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Animation d'entrée */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.experience-item {
+    animation: fadeInUp 0.6s ease-out;
 }
 
 /* ===== MODAL STYLES ===== */
