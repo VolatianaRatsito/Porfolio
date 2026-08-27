@@ -159,7 +159,7 @@ nav {
 
 .header-photo img:hover {
     transform: scale(1.1);
-    box-shadow: 0 20px 60px rgba(0, 255, 212, 0.4);
+    box-shadow: 0 20px 60px rgba(227, 233, 232, 0.4);
 }
 
 .header-content {
