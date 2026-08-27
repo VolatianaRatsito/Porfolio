@@ -685,26 +685,113 @@
     </div>
 </section>
 
-    <section id="contact">
-        <h2>Contactez-moi</h2>
-        <div style="text-align: center; margin-top: 2rem;">
-            <p>Disponible pour des opportunités en développement Web</p>
-            <p style="margin-top: 1rem;">
-                <a href="mailto:volatiananna@gmail.com" style="color: var(--accent-color); text-decoration: none;">
-                    <i class="fas fa-envelope"></i> volatianaannabruno@gmail.com
-                </a>
+   <section id="contact" class="contact-section">
+
+    <div class="contact-container">
+
+        <!-- Introduction -->
+        <div class="contact-intro">
+            <span class="contact-badge">
+                <i class="fas fa-paper-plane"></i>
+                CONTACT
+            </span>
+
+            <h2>Travaillons <span>ensemble.</span></h2>
+
+            <p>
+                Vous avez un projet, une opportunité ou simplement envie
+                d'échanger autour du développement web ?
+                Je serais ravie d'en discuter avec vous.
             </p>
-            <p style="margin-top: 1rem;">
-                <a href="tel:+261349457312" style="color: var(--accent-color); text-decoration: none;">
-                    <i class="fas fa-phone"></i> +261 34 94 573 12
-                </a>
-            </p>
-            <div class="social-links" style="justify-content: center; margin-top: 2rem;">
-                <a href="https://www.linkedin.com/in/volatiana-anna-ratsitoarimalala-2a855a376" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/VolatianaRatsito" target="_self" title="github"><i class="fab fa-github"></i></a>
+
+            <div class="contact-status">
+                <span class="status-dot"></span>
+                <span>Disponible pour des opportunités</span>
             </div>
         </div>
-    </section>
+
+
+        <!-- Informations de contact -->
+        <div class="contact-info">
+
+            <!-- Email -->
+            <a href="mailto:volatianaannabruno@gmail.com"
+               class="contact-card">
+
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+
+                <div class="contact-details">
+                    <span>Email</span>
+                    <strong>volatianaannabruno@gmail.com</strong>
+                </div>
+
+                <i class="fas fa-arrow-up-right-from-square contact-arrow"></i>
+
+            </a>
+
+
+            <!-- Téléphone -->
+            <a href="tel:+261349457312"
+               class="contact-card">
+
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+
+                <div class="contact-details">
+                    <span>Téléphone</span>
+                    <strong>+261 34 94 573 12</strong>
+                </div>
+
+                <i class="fas fa-arrow-up-right-from-square contact-arrow"></i>
+
+            </a>
+
+
+            <!-- Localisation -->
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    <i class="fas fa-location-dot"></i>
+                </div>
+
+                <div class="contact-details">
+                    <span>Localisation</span>
+                    <strong>Antananarivo, Madagascar</strong>
+                </div>
+
+                <i class="fas fa-map-marker-alt contact-arrow"></i>
+
+            </div>
+
+
+            <!-- Réseaux sociaux -->
+            <div class="contact-social">
+
+                <span>Retrouvez-moi également sur</span>
+
+                <div class="social-links">
+
+                    <a href="https://www.linkedin.com/in/volatiana-anna-ratsitoarimalala-2a855a376" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="Visiter mon profil LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+
+                    </a>
+
+                    <a href="https://github.com/VolatianaRatsito" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="Visiter mon profil GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
     <footer>
         <p>&copy; 2025 Volatiana Anna Ratsitoarimalala. Tous droits réservés.</p>
@@ -797,6 +884,61 @@
                     modal.style.display = 'none';
                     document.body.style.overflow = 'auto'
                 });
+            });
+
+            /* =========================================================
+            CONTACT SECTION - SCROLL REVEAL
+            ========================================================= */
+
+            document.addEventListener("DOMContentLoaded", () => {
+
+                const contactSection = document.querySelector(".contact-section");
+
+                if (!contactSection) return;
+
+                const revealElements = contactSection.querySelectorAll(
+                    ".contact-intro, .contact-card, .contact-social"
+                );
+
+                revealElements.forEach((element, index) => {
+
+                    element.style.opacity = "0";
+                    element.style.transform = "translateY(25px)";
+                    element.style.transition = `
+                        opacity 0.7s ease ${index * 0.12}s,
+                        transform 0.7s ease ${index * 0.12}s
+                    `;
+
+                });
+
+
+                const observer = new IntersectionObserver(
+                    (entries, observer) => {
+
+                        entries.forEach(entry => {
+
+                            if (!entry.isIntersecting) return;
+
+                            revealElements.forEach(element => {
+
+                                element.style.opacity = "1";
+                                element.style.transform = "translateY(0)";
+
+                            });
+
+                            observer.unobserve(entry.target);
+
+                        });
+
+                    },
+                    {
+                        threshold: 0.15
+                    }
+                );
+
+
+                observer.observe(contactSection);
+
             });
 
             // Fermer la modal en cliquant à l'extérieur
